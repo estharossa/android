@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactDetails"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact Details"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="#007BFF"
+        android:textStyle="bold"
+        android:fontFamily="@font/convergence"
+        android:layout_marginBottom="20dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/avatar">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:id="@+id/firstNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="First name"
+                android:textSize="16dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@android:color/black">
+
+            </TextView>
+            <TextView
+                android:id="@+id/lastNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Last name"
+                android:textSize="16dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@android:color/black">
+
+            </TextView>
+            <TextView
+                android:id="@+id/phoneNumberTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Phone number"
+                android:textSize="16dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@android:color/black">
+
+            </TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
