@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
 
         init()
         logoutButton.setOnClickListener {
-            logout()
             goToLoginPage()
         }
     }
@@ -35,6 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun goToLoginPage(){
         val intent = Intent(this, LoginActivity::class.java)
+        intent.putExtra("exitStatus", true)
         startActivity(intent)
     }
 }

@@ -16,15 +16,15 @@ class LoginActivity: AppCompatActivity() {
     private var password: String? = null
     private var prefs: SharedPreferences? = null
     private var editor: SharedPreferences.Editor? = null
+    private var exitStatus: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         prefs = PreferenceManager.getDefaultSharedPreferences(this)
         val data = this.getAuthorizationData()
-        Toast.makeText(this, data, Toast.LENGTH_LONG).show()
-        if (data.isNotEmpty()){
+        exitStatus = intent.getBooleanExtra("exitStatus", false)
+        if (data.isNotEmpty() and !exitStatus){
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -39,6 +39,7 @@ class LoginActivity: AppCompatActivity() {
             password = passwordEditText.text.toString()
             save()
             val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NO_HISTORY;
             startActivity(intent)
         }
     }
@@ -53,7 +54,7 @@ class LoginActivity: AppCompatActivity() {
 
     fun clear(){
         editor = prefs?.edit()
-        editor?.putString(LOGIN_PREF, "")
+        editor?.remove(LOGIN_PREF)
         editor?.apply()
     }
 }
