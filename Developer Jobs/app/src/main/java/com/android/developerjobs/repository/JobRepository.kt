@@ -8,4 +8,7 @@ class JobRepository(private val jobApi: JobApi) {
     fun getJobs():Observable<List<Job>>{
         return jobApi.get()
     }
+    fun getJobsByKeyword(keyword:String):Observable<List<Job>>{
+        return jobApi.searchByKeyword(keyword)
+    }
 }

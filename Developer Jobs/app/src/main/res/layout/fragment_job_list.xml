@@ -5,7 +5,34 @@
     android:layout_height="match_parent"
     tools:context=".view.JobListFragment"
     android:padding="20dp"
-    android:background="#E1E1E1">
+    android:background="#E1E1E1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:hint="Keyword..."
+            android:padding="10dp"
+            android:background="@drawable/like_background"
+            android:layout_marginRight="10dp">
+        </EditText>
+        <Button
+            android:id="@+id/findButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="FIND"
+            android:background="@drawable/like_background">
+        </Button>
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/jobsRecyclerView"
@@ -13,6 +40,4 @@
         android:layout_width="match_parent"
         tools:listitem="@layout/item">
     </androidx.recyclerview.widget.RecyclerView>
-
-
 </LinearLayout>

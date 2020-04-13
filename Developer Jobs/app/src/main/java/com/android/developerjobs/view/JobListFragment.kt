@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.android.developerjobs.R
@@ -62,12 +63,38 @@ class JobListFragment : Fragment() {
                     Log.d("Error", it.message)
                 }
             )
+
+        findButton.setOnClickListener {
+            val keyword = searchEditText.text.toString()
+            repository.getJobsByKeyword(keyword = keyword)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(
+                    {
+                        if(it.isNotEmpty())
+                            searchJobs(it)
+                        else
+                            Toast.makeText(context, "No results!", Toast.LENGTH_SHORT).show()
+                    },
+                    {
+                        Log.d("Error", it.message)
+                    }
+                )
+        }
     }
 
     private fun detailedInfo(job: Job){
         fragmentManager
             ?.beginTransaction()
             ?.replace(R.id.mainActivity, DetailedInfo.create(job))
+            ?.apply { addToBackStack(this::class.java.simpleName) }
+            ?.commit()
+    }
+
+    private fun searchJobs(jobs:List<Job>){
+        fragmentManager
+            ?.beginTransaction()
+            ?.replace(R.id.mainActivity, JobSearch.create(jobs))
             ?.apply { addToBackStack(this::class.java.simpleName) }
             ?.commit()
     }

@@ -6,6 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface JobApi {
     companion object Factory {
@@ -22,4 +23,7 @@ interface JobApi {
 
     @GET("positions.json")
     fun get(): Observable<List<Job>>
+
+    @GET("positions.json?")
+    fun searchByKeyword(@Query("search") keyword: String):Observable<List<Job>>
 }
