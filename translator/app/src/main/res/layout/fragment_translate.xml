@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#454545">
+
+
+    <FrameLayout
+        android:background="#212525"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/initialLanguageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Русский"
+            android:layout_gravity="left|center"
+            android:textColor="@android:color/white"
+            style="@style/languageSelectText">
+
+        </TextView>
+        <ImageView
+            android:id="@+id/swapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/swap"
+            android:layout_gravity="center|center_vertical">
+
+        </ImageView>
+        <TextView
+            android:id="@+id/finalLanguageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textColor="@android:color/white"
+            android:layout_gravity="right|center"
+            style="@style/languageSelectText">
+
+
+        </TextView>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        android:background="@drawable/edit_text_background">
+        <EditText
+            android:id="@+id/initialEditText"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Введите текст"
+            android:fontFamily="@font/rubik"
+            >
+        </EditText>
+        <ImageView
+            android:id="@+id/clearButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cross">
+
+        </ImageView>
+    </LinearLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/translateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:padding="10dp"
+        android:background="@drawable/translate_button_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Перевести"
+            android:layout_gravity="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/rubik"
+            android:textColor="@android:color/white">
+
+        </TextView>
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+
+        <TextView
+            android:id="@+id/translatedTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:fontFamily="@font/rubik"
+            tools:text="test" />
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:background="@drawable/translate_button_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить в избранные"
+            android:layout_gravity="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/rubik"
+            android:textColor="@android:color/white">
+
+        </TextView>
+    </FrameLayout>
+
+
+</LinearLayout>
