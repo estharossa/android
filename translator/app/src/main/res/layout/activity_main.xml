@@ -13,7 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:itemBackground="@color/whiteColor"
-        app:menu="@menu/bottom_navigation">
+        app:menu="@menu/bottom_navigation"
+        app:elevation="2dp"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
@@ -21,7 +24,8 @@
         android:id="@id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNavigation">
+        android:layout_above="@id/bottomNavigation"
+        >
 
     </FrameLayout>
 </RelativeLayout>
